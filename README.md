@@ -8,6 +8,7 @@ Configures a docker registry 2.0 server, puts a nginx server in front of it for 
 https://github.com/docker/distribution/blob/master/docs/deploying.md
 https://github.com/docker/distribution/blob/release/2.0/docs/deploying.md
 https://github.com/docker/distribution/blob/release/2.0/docs/configuration.md
+https://www.digitalocean.com/community/tutorials/how-to-set-up-a-private-docker-registry-on-ubuntu-14-04
 
 ## Instructions
 
