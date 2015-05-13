@@ -55,3 +55,13 @@ Then add more using
 ```
 htpasswd registry.htpasswd {username}
 ```
+
+Now build the registry-proxy:
+```
+docker build -t registry-proxy .
+```
+
+And start it linked to the registry:
+```
+docker run -d -p 443:443 --name registry-proxy --link registry:registryv2 registry-proxy
+```
