@@ -4,30 +4,39 @@ Scripts to help making a docker registry server on a ubuntu 14.04 host
 Configures a docker registry 2.0 server, puts a nginx server in front of it for (optional) ssl and user authentication.
 
 ## ref
+
 https://github.com/docker/distribution/blob/master/docs/deploying.md
 https://github.com/docker/distribution/blob/release/2.0/docs/deploying.md
 https://github.com/docker/distribution/blob/release/2.0/docs/configuration.md
 
 ## Instructions
 
+```
 wget https://github.com/Smartrak/docker-registry-build/archive/master.tar.gz
 tar -zxf docker-registry-build-master.tar.gz
 cd docker-registry-build-master
-sudo sh ./step1.sh
+sudo sh ./step1.sh `whoami`
+```
 
-log out and back in
+log out and back in (Your user is now in the docker group)
 
+```
 cd docker-registry-build-master
 nano config.yml
+```
 
 Change the last line (secret)
 
+```
 sh ./step2.sh
+```
 
 Try open http://dockerregistryhost:5000/
 Should get "404 page not found"
 
+```
 sh ./step3.sh
+```
 
 Now we have the registry running, we need to put nginx in front
 
