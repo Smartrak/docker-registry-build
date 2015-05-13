@@ -41,4 +41,17 @@ sh ./step3.sh
 
 Now we have the registry running, we need to put nginx in front
 
-TODO
+```
+cd nginx
+```
+
+Get your ssl certs and put them in nginx/ as registry.crt registry.key
+Set up the htpasswd file by running:
+
+```
+htpasswd -c registry.htpasswd {username}
+```
+Then add more using
+```
+htpasswd registry.htpasswd {username}
+```
