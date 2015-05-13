@@ -65,3 +65,20 @@ And start it linked to the registry:
 ```
 docker run -d -p 443:443 --name registry-proxy --link registry:registryv2 registry-proxy
 ```
+
+Now if everything went well, you should be able to browse to it at https://dockerhostip/
+Note we've run everything at port 443, change if you want to.
+If something doesn't work run:
+
+```
+docker logs registry-proxy
+```
+
+Then fix config and rebuild the container with:
+```
+docker stop registry-proxy
+docker rm registry-proxy
+docker rmi registry-proxy
+docker build -t registry-proxy .
+docker run -d -p 443:443 --name registry-proxy --link registry:registryv2 registry-proxy
+```
