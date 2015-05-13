@@ -5,7 +5,7 @@ COPY registry.conf /etc/nginx/conf.d/registry.conf
 COPY registry.htpasswd /etc/nginx/registry.htpasswd
 
 #if you have ssl
-COPY registry.pub /etc/ssl/certs/registry.pub
+COPY registry.pub /etc/ssl/certs/registry.crt
 COPY registry.key /etc/ssl/private/registry.key
 
 EXPOSE 443
